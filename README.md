@@ -22,35 +22,29 @@ This project addresses the problem by:
 ---
 
 ## 🏗️ System Architecture
-+------------------+
-|      User        |
-| (Register/Verify)|
-+--------+---------+
-         |
-         v
-+---------------------------+
-|   Flask Web Application   |
-|---------------------------|
-|  • Product Registration   |
-|  • QR Code Generation     |
-|  • QR Code Verification   |
-+-------------+-------------+
-              |
-     +--------+--------+
-     |                 |
-     v                 v
-+------------+   +----------------------+
-|   SQLite   |   | Simulated Blockchain |
-|------------|   |----------------------|
-| • Products |   | • SHA-256 Hash Chain |
-| • Logs     |   | • Tamper Detection   |
-+------------+   +----------------------+
-              |
-              v
-+-----------------------------+
-| Verification Result Display |
-| AUTHENTIC / FAKE / TAMPERED |
-+-----------------------------+
+User
+ │
+ │ Register / Verify Product
+ ▼
+Flask Web Application
+ ├─ Product Registration
+ ├─ QR Code Generation
+ └─ QR Code Verification
+ │
+ ├─ Stores & fetches product data
+ │
+ ├───────────────┐
+ ▼               ▼
+SQLite Database   Simulated Blockchain
+ ├─ Products      ├─ SHA-256 Hash Chain
+ ├─ Logs          └─ Tamper Detection
+ │
+ └───────────────┘
+ ▼
+Verification Result
+ → AUTHENTIC
+ → FAKE
+ → TAMPERED
 
 
 ### Core Components
