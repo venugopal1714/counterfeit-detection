@@ -3,7 +3,7 @@
 A web-based application to **detect counterfeit products** using **QR code verification** and a **simulated blockchain** for tamper-resistant traceability.  
 The system allows users to register products, generate QR codes, and verify product authenticity in real time.
 
-🚀 **Live Demo:** https://counterfeit-detection.onrender.com  
+🚀 **Live Demo:** https://counterfeit-detection-m5vy.onrender.com 
 📦 **Tech Stack:** Flask | SQLite | QR Codes | SHA-256 Blockchain | Render
 
 ---
