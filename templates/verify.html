@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h2>Verify Product</h2>
-<form method="POST">
-  Product ID: <input name="product_id" required><br><br>
-  <button type="submit">Verify</button>
-</form>
+{% extends "base.html" %}
+{% block content %}
 
-{% if result %}
-<h3>{{ result }}</h3>
-{% endif %}
-</body>
-</html>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4>Verify Product</h4>
+                <form method="POST" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label>Product ID</label>
+                        <input type="text" name="product_id" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Upload QR Code</label>
+                        <input type="file" name="qr_image" class="form-control" required>
+                    </div>
+
+                    <button class="btn btn-success w-100">
+                        Verify Authenticity
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
