@@ -4,6 +4,7 @@ A web-based application to **detect counterfeit products** using **QR code verif
 The system allows users to register products, generate QR codes, and verify product authenticity in real time.
 
 🚀 **Live Demo:** https://counterfeit-detection-m5vy.onrender.com/
+
 📦 **Tech Stack:** Flask | SQLite | QR Codes | SHA-256 Blockchain | Render
 
 ---
@@ -21,18 +22,35 @@ This project addresses the problem by:
 ---
 
 ## 🏗️ System Architecture
-User
-│
-│ Register / Verify
-▼
-Flask Web Application
-│
-├── QR Code Generator & Decoder
-├── SQLite Database (Product Records & Logs)
-├── Simulated Blockchain (SHA-256 Hash Chain)
-│
-▼
-Verification Result (AUTHENTIC / FAKE / TAMPERED)
++------------------+
+|      User        |
+| (Register/Verify)|
++--------+---------+
+         |
+         v
++---------------------------+
+|   Flask Web Application   |
+|---------------------------|
+|  • Product Registration   |
+|  • QR Code Generation     |
+|  • QR Code Verification   |
++-------------+-------------+
+              |
+     +--------+--------+
+     |                 |
+     v                 v
++------------+   +----------------------+
+|   SQLite   |   | Simulated Blockchain |
+|------------|   |----------------------|
+| • Products |   | • SHA-256 Hash Chain |
+| • Logs     |   | • Tamper Detection   |
++------------+   +----------------------+
+              |
+              v
++-----------------------------+
+| Verification Result Display |
+| AUTHENTIC / FAKE / TAMPERED |
++-----------------------------+
 
 
 ### Core Components
@@ -89,6 +107,14 @@ Verification Result (AUTHENTIC / FAKE / TAMPERED)
   - **AUTHENTIC**
   - **FAKE**
   - **TAMPERED**
-
+ 
 ---
+👨‍💻 Author
+
+Venu Gopal
+B.Tech Student | Full Stack & AI/ML Enthusiast
+
+🔗 GitHub: https://github.com/venugopal1714
+
+🌍 Live Demo: https://counterfeit-detection-m5vy.onrender.com/
 
